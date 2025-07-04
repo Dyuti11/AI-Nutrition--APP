@@ -73,7 +73,7 @@ uploaded_file = st.file_uploader("Upload a food image", type=["jpg", "jpeg", "pn
 if st.button('Submit'):
     if uploaded_file:
         processed_image = preprocess_image(uploaded_file)
-        st.image(uploaded_file, caption="Uploaded Image", use_column_width=True)
+        st.image(uploaded_file, caption="Uploaded Image", use_container_width=True)
         response = get_gemini_response(processed_image, prompt)
         if response:
             st.subheader("🍽 Nutrition Analysis:")
